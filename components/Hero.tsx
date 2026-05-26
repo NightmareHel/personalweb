@@ -8,7 +8,7 @@ const LINES = [
   'role       = "AI Engineer"',
   'university = "Temple University, CS \'26"',
   'focus      = ["LLMs", "Multi-Agent Systems", "Automation"]',
-  'highlight  = "Penn State Hackathon 2025 — 1st Place"',
+  'highlight  = "Penn State Hackathon 2025, 1st Place"',
   'status     = "Open to AI Engineering roles"',
   "# Let's build something.",
 ];

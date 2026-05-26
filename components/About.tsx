@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const highlights = [
   { label: "Penn State Hackathon 2025", value: "Winner" },
-  { label: "Degree", value: "B.S. Computer Science — Temple University" },
+  { label: "Degree", value: "B.S. Computer Science, Temple University" },
   { label: "Focus", value: "AI Agents & Multiagent Systems" },
   { label: "Experience", value: "SAP AI Dev Team (Intern)" },
 ];
@@ -40,7 +40,7 @@ export default function About() {
               className="text-base leading-7 mb-4"
             >
               I&apos;m an AI developer focused on building systems that actually work in
-              the real world — agents that take action, multiagent pipelines that
+              the real world: agents that take action, multiagent pipelines that
               coordinate, and infrastructure that multiplies output.
             </p>
             <p
@@ -56,8 +56,8 @@ export default function About() {
               style={{ color: "var(--text-secondary)" }}
               className="text-base leading-7"
             >
-              I freelance in AI engineering — agents, automation, LLM
-              integrations — and I&apos;m actively building my portfolio toward a
+              I freelance in AI engineering: agents, automation, LLM
+              integrations, and I&apos;m actively building my portfolio toward a
               full-time AI/ML engineering role.
             </p>
           </div>

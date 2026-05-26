@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const projects = [
   {
     name: "DroughtGuard",
-    tag: "Hackathon Winner — Penn State 2025",
+    tag: "Hackathon Winner, Penn State 2025",
     description:
       "AI-powered drought prediction and alert system. Won Penn State Hackathon 2025. Combines real-time environmental data with ML models to surface actionable drought risk signals.",
     tech: ["Python", "Machine Learning", "AI", "Data Pipeline"],
@@ -16,7 +16,7 @@ const projects = [
     name: "Boardroom",
     tag: "Personal AI Infrastructure",
     description:
-      "A fully integrated AI executive assistant and second brain built on Claude Code. Features a custom skills system, persistent memory, and live MCP server connections to Gmail, Canvas, and Google Drive — with more integrations on the roadmap.",
+      "A fully integrated AI executive assistant and second brain built on Claude Code. Features a custom skills system, persistent memory, and live MCP server connections to Gmail, Canvas, and Google Drive, with more integrations on the roadmap.",
     tech: ["Claude AI", "MCP", "Gmail API", "Canvas API", "TypeScript"],
     href: "https://github.com/nightmarehel",
     featured: false,

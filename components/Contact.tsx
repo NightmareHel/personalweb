@@ -30,7 +30,7 @@ export default function Contact() {
           className="text-base mb-10 max-w-lg"
         >
           Open to AI engineering roles, freelance projects, and collaboration.
-          Based in Philadelphia — available for remote or tri-state area work.
+          Based in Philadelphia, available for remote or tri-state area work.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
