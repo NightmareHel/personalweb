@@ -21,6 +21,7 @@ export default function NeuralBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -28,14 +29,14 @@ export default function NeuralBackground() {
     let nodes: Node[] = [];
 
     function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas!.width = window.innerWidth;
+      canvas!.height = window.innerHeight;
     }
 
     function init() {
       nodes = Array.from({ length: NODE_COUNT }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * canvas!.width,
+        y: Math.random() * canvas!.height,
         vx: (Math.random() - 0.5) * 0.35,
         vy: (Math.random() - 0.5) * 0.35,
         r: Math.random() * 1.2 + 0.8,
@@ -44,13 +45,16 @@ export default function NeuralBackground() {
     }
 
     function draw(t: number) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const w = canvas!.width;
+      const h = canvas!.height;
+
+      ctx!.clearRect(0, 0, w, h);
 
       for (const n of nodes) {
         n.x += n.vx;
         n.y += n.vy;
-        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
-        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
       }
 
       for (let i = 0; i < nodes.length; i++) {
@@ -62,22 +66,22 @@ export default function NeuralBackground() {
             const base = (1 - dist / MAX_DIST) * 0.18;
             const pulse = Math.sin(t * 0.001 + nodes[i].pulseOffset) * 0.04;
             const alpha = Math.max(0, base + pulse);
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(${ACCENT}, ${alpha})`;
-            ctx.lineWidth = 0.6;
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.stroke();
+            ctx!.beginPath();
+            ctx!.strokeStyle = `rgba(${ACCENT}, ${alpha})`;
+            ctx!.lineWidth = 0.6;
+            ctx!.moveTo(nodes[i].x, nodes[i].y);
+            ctx!.lineTo(nodes[j].x, nodes[j].y);
+            ctx!.stroke();
           }
         }
       }
 
       for (const n of nodes) {
         const pulse = Math.sin(t * 0.0015 + n.pulseOffset) * 0.15 + 0.35;
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${ACCENT}, ${pulse})`;
-        ctx.fill();
+        ctx!.beginPath();
+        ctx!.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(${ACCENT}, ${pulse})`;
+        ctx!.fill();
       }
 
       raf = requestAnimationFrame(draw);
