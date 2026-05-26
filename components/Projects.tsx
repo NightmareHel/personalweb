@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const projects = [
   {
     name: "DroughtGuard",
@@ -5,7 +9,7 @@ const projects = [
     description:
       "AI-powered drought prediction and alert system. Won Penn State Hackathon 2025. Combines real-time environmental data with ML models to surface actionable drought risk signals.",
     tech: ["Python", "Machine Learning", "AI", "Data Pipeline"],
-    href: "https://github.com/nightmarehel",
+    href: "https://github.com/nightmarehel/DroughtGuard",
     featured: true,
   },
   {
@@ -25,7 +29,7 @@ const projects = [
     description:
       "Multi-agent system designed to simulate emergent AGI-like behavior through coordinated agent collaboration. Built as a final project exploring the thesis that multi-agent coordination is a viable proto-AGI architecture.",
     tech: ["Python", "Multi-Agent Systems", "LLMs", "Claude AI"],
-    href: "https://github.com/nightmarehel",
+    href: "https://github.com/nightmarehel/AGI-Simulation",
     featured: false,
   },
   {
@@ -34,14 +38,21 @@ const projects = [
     description:
       "Telegram-based scheduling and reminder assistant. Built as LLM Engineer on a 4-person team using SCRUM methodology. Handles natural language scheduling, reminders, and task tracking via Telegram.",
     tech: ["Python", "Telegram API", "LLMs", "SCRUM"],
-    href: "https://github.com/nightmarehel",
+    href: "https://github.com/nightmarehel/telegassistant",
     featured: false,
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
+    <motion.section
+      id="projects"
+      className="py-24 px-6"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-5xl mx-auto">
         <p
           style={{ color: "var(--accent)", fontFamily: "var(--font-geist-mono)" }}
@@ -180,6 +191,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

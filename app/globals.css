@@ -4,8 +4,8 @@
   --bg: #0a0a0f;
   --surface: #111118;
   --border: #1e1e2e;
-  --accent: #6366f1;
-  --accent-glow: rgba(99, 102, 241, 0.15);
+  --accent: #991b1b;
+  --accent-glow: rgba(153, 27, 27, 0.15);
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
   --text-muted: #475569;
@@ -35,7 +35,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: white;
+  color: #e2e8f0;
 }
 
 ::-webkit-scrollbar {

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const skillGroups = [
   {
     category: "Languages",
@@ -43,17 +47,22 @@ const skillGroups = [
     skills: [
       "Systems Design",
       "Automation Architecture",
-      "SCRUM / Agile",
-      "Version Control",
+      "Agentic Architecture",
       "Network Security",
-      "Digital Forensics",
     ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
+    <motion.section
+      id="skills"
+      className="py-24 px-6"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-5xl mx-auto">
         <p
           style={{ color: "var(--accent)", fontFamily: "var(--font-geist-mono)" }}
@@ -106,6 +115,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

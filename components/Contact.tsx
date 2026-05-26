@@ -1,6 +1,17 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
+    <motion.section
+      id="contact"
+      className="py-24 px-6"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-5xl mx-auto">
         <p
           style={{ color: "var(--accent)", fontFamily: "var(--font-geist-mono)" }}
@@ -24,7 +35,7 @@ export default function Contact() {
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="mailto:sidhant@example.com"
+            href="mailto:sidhant31032004@gmail.com"
             style={{ backgroundColor: "var(--accent)" }}
             className="px-6 py-3 rounded-lg text-white text-sm font-medium hover:opacity-90 transition-opacity inline-block"
           >
@@ -74,6 +85,6 @@ export default function Contact() {
           Philadelphia, PA
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 }

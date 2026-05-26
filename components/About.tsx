@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const highlights = [
   { label: "Penn State Hackathon 2025", value: "Winner" },
   { label: "Degree", value: "B.S. Computer Science — Temple University" },
@@ -7,7 +11,14 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6">
+    <motion.section
+      id="about"
+      className="py-24 px-6"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-5xl mx-auto">
         <p
           style={{ color: "var(--accent)", fontFamily: "var(--font-geist-mono)" }}
@@ -78,6 +89,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
