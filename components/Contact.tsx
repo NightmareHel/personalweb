@@ -54,7 +54,7 @@ export default function Contact() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/"
+            href="https://www.linkedin.com/in/sidhant-kumar-4144b6256/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
