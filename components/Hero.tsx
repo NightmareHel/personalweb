@@ -110,28 +110,37 @@ export default function Hero() {
         <TerminalBox />
 
         <div className="flex gap-3 flex-wrap justify-center">
-          <a
+          <motion.a
             href="#projects"
             style={{ backgroundColor: "var(--accent)" }}
-            className="px-6 py-3 rounded-lg text-white text-sm font-medium hover:opacity-90 transition-opacity"
+            className="px-6 py-3 rounded-lg text-white text-sm font-semibold"
+            whileHover={{ opacity: 0.9 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
           >
             See My Work
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#contact"
             style={{ border: "1px solid var(--accent)", color: "var(--accent)" }}
-            className="px-6 py-3 rounded-lg text-sm font-medium hover:opacity-80 transition-opacity"
+            className="px-6 py-3 rounded-lg text-sm font-medium"
+            whileHover={{ opacity: 0.8 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
           >
             Get in Touch
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="/resume.pdf"
             download
             style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}
-            className="px-6 py-3 rounded-lg text-sm font-medium hover:border-red-800 hover:text-white transition-all"
+            className="px-6 py-3 rounded-lg text-sm font-medium"
+            whileHover={{ borderColor: "#991b1b", color: "#e2e8f0" }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
           >
             Resume ↓
-          </a>
+          </motion.a>
         </div>
       </div>
     </section>

@@ -3,35 +3,46 @@
 import { motion } from "motion/react";
 
 const highlights = [
-  { label: "Penn State Hackathon 2025", value: "Winner" },
+  { label: "Penn State Hackathon 2025", value: "1st Place Winner" },
   { label: "Degree", value: "B.S. Computer Science, Temple University" },
   { label: "Focus", value: "AI Agents & Multiagent Systems" },
-  { label: "Experience", value: "SAP AI Dev Team (Intern)" },
+  { label: "Experience", value: "SAP AI Dev Team, Intern" },
 ];
 
 export default function About() {
   return (
     <motion.section
       id="about"
-      className="py-24 px-6"
+      className="py-24 px-6 relative"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="max-w-5xl mx-auto">
-        <p
-          style={{ color: "var(--accent)", fontFamily: "var(--font-geist-mono)" }}
-          className="text-xs tracking-widest uppercase mb-3"
-        >
-          About
-        </p>
-        <h2
-          style={{ color: "var(--text-primary)" }}
-          className="text-3xl font-bold mb-12"
-        >
-          Background
-        </h2>
+      {/* Depth layer */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(153,27,27,0.06) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="max-w-5xl mx-auto relative">
+        <div className="mb-12">
+          <p
+            style={{ color: "var(--text-muted)", fontFamily: "var(--font-geist-mono)" }}
+            className="text-xs mb-3 tracking-wide"
+          >
+            About
+          </p>
+          <h2
+            style={{ color: "var(--text-primary)" }}
+            className="text-3xl font-bold"
+          >
+            Background
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -62,15 +73,19 @@ export default function About() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            {highlights.map((h) => (
-              <div
+          <div className="flex flex-col gap-3">
+            {highlights.map((h, i) => (
+              <motion.div
                 key={h.label}
                 style={{
                   backgroundColor: "var(--surface)",
                   border: "1px solid var(--border)",
                 }}
                 className="rounded-lg px-5 py-4"
+                initial={{ opacity: 0, x: 16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut", delay: i * 0.08 }}
+                viewport={{ once: true }}
               >
                 <p
                   style={{
@@ -81,10 +96,10 @@ export default function About() {
                 >
                   {h.label}
                 </p>
-                <p style={{ color: "var(--text-primary)" }} className="text-sm font-medium">
+                <p style={{ color: "var(--text-primary)" }} className="text-sm font-semibold">
                   {h.value}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

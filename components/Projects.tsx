@@ -55,8 +55,8 @@ export default function Projects() {
     >
       <div className="max-w-5xl mx-auto">
         <p
-          style={{ color: "var(--accent)", fontFamily: "var(--font-geist-mono)" }}
-          className="text-xs tracking-widest uppercase mb-3"
+          style={{ color: "var(--text-muted)", fontFamily: "var(--font-geist-mono)" }}
+          className="text-xs tracking-wide mb-3"
         >
           Projects
         </p>
@@ -68,8 +68,8 @@ export default function Projects() {
         </h2>
 
         <div className="flex flex-col gap-6">
-          {projects.map((p) => (
-            <a
+          {projects.map((p, i) => (
+            <motion.a
               key={p.name}
               href={p.href}
               target="_blank"
@@ -79,15 +79,21 @@ export default function Projects() {
                 border: p.featured
                   ? "1px solid var(--accent)"
                   : "1px solid var(--border)",
-                boxShadow: p.featured ? "0 0 24px var(--accent-glow)" : "none",
+                boxShadow: p.featured ? "var(--shadow-accent)" : "none",
               }}
-              className="rounded-xl p-6 hover:border-indigo-400 transition-all group block"
+              className="rounded-xl p-6 group block"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ borderColor: "rgba(153,27,27,0.6)" }}
+              whileTap={{ scale: 0.99 }}
+              transition={{ duration: 0.35, ease: "easeOut", delay: i * 0.08 }}
+              viewport={{ once: true }}
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                 <div>
                   <span
                     style={{ color: "var(--text-primary)" }}
-                    className="text-lg font-semibold group-hover:text-indigo-400 transition-colors"
+                    className="text-lg font-semibold group-hover:text-red-400 transition-colors"
                   >
                     {p.name}
                   </span>
@@ -187,7 +193,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

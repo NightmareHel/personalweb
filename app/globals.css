@@ -6,9 +6,10 @@
   --border: #1e1e2e;
   --accent: #991b1b;
   --accent-glow: rgba(153, 27, 27, 0.15);
+  --shadow-accent: 0 4px 32px rgba(153, 27, 27, 0.14);
   --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
+  --text-secondary: #a8a29e;
+  --text-muted: #57534e;
 }
 
 @theme inline {
@@ -31,6 +32,11 @@ body {
   color: var(--text-primary);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+  letter-spacing: -0.03em;
 }
 
 ::selection {

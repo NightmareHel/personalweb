@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sidhant Kumar — AI Developer",
+  title: "Sidhant Kumar, AI Developer",
   description:
     "AI developer building agents, multiagent systems, and automation tools. CS student at Temple University. Penn State Hackathon 2025 winner.",
   openGraph: {
-    title: "Sidhant Kumar — AI Developer",
+    title: "Sidhant Kumar, AI Developer",
     description:
       "AI developer building agents, multiagent systems, and automation tools.",
     type: "website",
